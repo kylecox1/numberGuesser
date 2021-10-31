@@ -1,0 +1,7 @@
+C:\Docs\Csharp\Day04Exercises\bin\Debug\Day04Exercises.exe.config
+C:\Docs\Csharp\Day04Exercises\bin\Debug\Day04Exercises.exe
+C:\Docs\Csharp\Day04Exercises\bin\Debug\Day04Exercises.pdb
+C:\Docs\Csharp\Day04Exercises\obj\Debug\Day04Exercises.csproj.AssemblyReference.cache
+C:\Docs\Csharp\Day04Exercises\obj\Debug\Day04Exercises.csproj.CoreCompileInputs.cache
+C:\Docs\Csharp\Day04Exercises\obj\Debug\Day04Exercises.exe
+C:\Docs\Csharp\Day04Exercises\obj\Debug\Day04Exercises.pdb
