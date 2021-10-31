@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace Day04Exercises
 {
     class Program
@@ -10,13 +9,10 @@ namespace Day04Exercises
         {
             Random rand = new Random();
             bool playAgain = true;
-            //int numberOfGuesses = 0;
 
             do
-            {
-                //NumberGuesser(rand.Next(1, 101));
-                                
-                Console.WriteLine(NumberGuesser(50));
+            {  
+                Console.WriteLine(NumberGuesser(rand.Next(1, 101)));
 
                 Console.Write("Play again (y/n): ");
                 playAgain = PlayAgain();
