@@ -358,6 +358,6 @@ namespace Day04Exercises
             return total;
         }
 
-        // Exercise 19
+        // Exercise 19 test
     }
 }
