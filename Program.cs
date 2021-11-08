@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Day04Exercises
 {
@@ -14,7 +15,7 @@ namespace Day04Exercises
             do
             {
 
-                numberMultiplier();
+                stringReverser();
 
                 //Console.WriteLine(NumberGuesser(rand.Next(1, 101)));
 
@@ -330,7 +331,7 @@ namespace Day04Exercises
         public static string AsteriskPyramidCentered(int BaseLength)
         {
             StringBuilder sb = new StringBuilder("");
-            int spaces = BaseLength * 2 -2; 
+            int spaces = BaseLength * 2 - 2;
             for (int i = 1; i < BaseLength; i++)
             {
                 for (int k = spaces; k >= BaseLength; k--)
@@ -398,7 +399,146 @@ namespace Day04Exercises
             {
                 product *= i;
             }
-            Console.WriteLine($"The product of {number}, {number -1}, and {number -2} is {product}.");
+            Console.WriteLine($"The product of {number}, {number - 1}, and {number - 2} is {product}.");
+        }
+
+        // Exercise 22
+        public static void checkIfNumberInRange()
+        {
+            Console.Write("Enter a number: ");
+            string input = Console.ReadLine();
+            int num1 = int.Parse(input);
+            Console.Write("Enter another number: ");
+            string input2 = Console.ReadLine();
+            int num2 = int.Parse(input2);
+            int highNumber = -1;
+            int lowNumber = -1;
+            if (num1 < num2)
+            {
+                lowNumber = num1;
+                highNumber = num2;
+            }
+            else
+            {
+                lowNumber = num2;
+                highNumber = num1;
+            }
+            Console.WriteLine($"Your range is {lowNumber}-{highNumber}.");
+            Console.Write("Enter a number to verify it is in the range: ");
+            string input3 = Console.ReadLine();
+            int num3 = int.Parse(input3);
+            bool isInRange = false;
+            for (int i = lowNumber; i <= highNumber; i++)
+            {
+                if (num3 == i)
+                {
+                    isInRange = true;
+                }
+            }
+            if (isInRange)
+            {
+                Console.WriteLine($"{num3} is in the range.");
+            }
+            else
+            {
+                Console.WriteLine($"{num3} is outside the range.");
+            }
+        }
+
+        // Exercise 23
+        public static void firstTenCharacters()
+        {
+            Console.Write("Enter some text: ");
+            string input = Console.ReadLine();
+            string res = input.Substring(0, 10);
+            Console.WriteLine($"The first ten characters were: {res}");
+        }
+
+        // Exercise 24
+        public static void lastTenCharacters()
+        {
+            Console.Write("Enter some text: ");
+            string input = Console.ReadLine();
+            string res = input.Substring(input.Length - 10);
+            Console.WriteLine($"The last ten characters were: {res}");
+        }
+
+        // Exercise 25
+        public static void displayEachWord()
+        {
+            Console.Write("Enter a sentence: ");
+            string input = Console.ReadLine();
+            string[] words = input.Split(' ');
+            foreach (var word in words)
+            {
+                System.Console.WriteLine($"{word}");
+            }
+        }
+
+        // Exercise 26
+        public static void vowelCounter()
+        {
+            Console.Write("Enter some text: ");
+            string input = Console.ReadLine().ToLower();
+            int vowelCount = 0;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] == 'a' || input[i] == 'e' || input[i] == 'i' || input[i] == 'o' || input[i] == 'u')
+                {
+                    vowelCount++;
+                }
+            }
+            Console.WriteLine($"The number of vowels is {vowelCount}.");
+        }
+
+        // Exercise 27
+        public static void consonantCounter()
+        {
+            Console.Write("Enter some text: ");
+            string input = Console.ReadLine().ToLower();
+            int consonantCount = 0;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (!(input[i] == 'a' || input[i] == 'e' || input[i] == 'i' || input[i] == 'o' || input[i] == 'u' || input[i] == ' '))
+                {
+                    consonantCount++;
+                }
+            }
+            Console.WriteLine($"The number of consonants is {consonantCount}.");
+        }
+
+        // Exercise 28
+        public static void vowelRemover()
+        {
+            Console.Write("Enter some text: ");
+            string input = Console.ReadLine();
+            string result = Regex.Replace(input, "[aeiouAEIOU]", "");
+            Console.WriteLine(result);
+        }
+
+        // Exercise 29
+        public static void vowelRemoverSaveFirstLast()
+        {
+            Console.Write("Enter some text: ");
+            string input = Console.ReadLine();
+            string firstLetter = input.Substring(0, 1);
+            string lastLetter = input.Substring(0, input.Length);
+            string croppedInput = input.Substring(1, input.Length-1);
+            string croppedResult = Regex.Replace(croppedInput, "[aeiouAEIOU]", "");
+            Console.WriteLine($"{firstLetter}{croppedResult}{lastLetter}");
+        }
+
+        // Exercise 30
+        public static void stringReverser()
+        {
+            Console.Write("Enter some text: ");
+            string input = Console.ReadLine();
+            char[] charArr = input.ToCharArray();
+            for (int i = charArr.Length - 1; i > -1; i--)
+            {
+                Console.Write(charArr[i]);
+            }
+            Console.WriteLine("");
         }
     }
 }
